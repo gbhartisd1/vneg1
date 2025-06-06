@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kit Lounge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Kit Lounge</h1>
+    <nav>
+      <button id="show-list">Browse Kits</button>
+      <button id="show-form">Share a Kit</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="kit-list-section">
+      <h2>Shared Kits</h2>
+      <div id="kit-list"></div>
+    </section>
+
+    <section id="kit-form-section" style="display:none;">
+      <h2>Share Something You Made</h2>
+      <form id="kit-form">
+        <label>
+          Kit Title:<br>
+          <input type="text" name="title" required>
+        </label><br><br>
+        <label>
+          Description:<br>
+          <textarea name="description" rows="2" required></textarea>
+        </label><br><br>
+        <label>
+          How to Make It:<br>
+          <textarea name="instructions" rows="4" required></textarea>
+        </label><br><br>
+        <label>
+          Image URL (optional):<br>
+          <input type="url" name="image">
+        </label><br><br>
+        <button type="submit">Share Kit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Kit Lounge. Inspired by Craigslist.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
