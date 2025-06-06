@@ -93,6 +93,7 @@ kitForm.onsubmit = async function(e) {
   form.reset();
   kitListSection.style.display = "";
   kitFormSection.style.display = "none";
+  console.log("Kit saved successfully:", kit);
 };
 
 // Initial render
