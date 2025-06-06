@@ -1,7 +1,3 @@
-const kitListSection = document.getElementById("kit-list-section");
-const kitFormSection = document.getElementById("kit-form-section");
-const kitForm = document.getElementById("kit-form");
-const kitListDiv = document.getElementById("kit-list");
 
 //db work : VIBECODED PLS CHECK
 const express = require("express");
@@ -15,6 +11,7 @@ const Kit = mongoose.model('Kit', {
   image: String
 });
 const app = express();
+app.use(express.static('public'));
 app.use(cors());
 app.use(express.json());
 
@@ -29,9 +26,9 @@ app.post('/kits', async (req, res) => {
   res.status(201).json(kit);
 });
 
-app.listen(3000, () => console.log('Backend running on http://localhost:3000'));
+app.listen(27017, () => console.log('Backend running on http://localhost:27017'));
 
-
+/*
 // Frontend code: ALSO VIBE CODED SORRY MOTHER EARTH
 document.getElementById("show-form").onclick = () => {
   kitListSection.style.display = "none";
@@ -43,7 +40,7 @@ document.getElementById("show-list").onclick = () => {
 };
 
 async function getKits() {
-  const res = await fetch("http://localhost:3000/kits");
+  const res = await fetch("http://localhost:27017/kits");
   if (res.ok){
     return await res.json();
   } else {
@@ -53,7 +50,7 @@ async function getKits() {
 }
 
 async function saveKits(kits) {
-  await fetch('http://localhost:3000/kits', {
+  await fetch('http://localhost:27017/kits', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(kit)
@@ -96,5 +93,7 @@ kitForm.onsubmit = async function(e) {
   console.log("Kit saved successfully:", kit);
 };
 
+
 // Initial render
 renderKits();
+*/
